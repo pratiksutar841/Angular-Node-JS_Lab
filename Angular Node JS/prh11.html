@@ -1,0 +1,21 @@
+# Example on ng-blur.
+
+<!DOCTYPE html>
+<html>
+<title>
+          Demo on ng-blur directive
+</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+          </script>
+</head>
+
+<body ng-app="">
+          Keep focus and keep losing focus from me to get the action done:
+          <input type="text" ng-model="name" ng-init="count=0" ng-blur="count=count+1">
+          <br />
+          {{count}}
+</body>
+
+</html>

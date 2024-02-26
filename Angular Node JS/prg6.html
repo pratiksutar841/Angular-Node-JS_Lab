@@ -1,0 +1,31 @@
+# Example on ng-options
+
+<!DOCTYPE html>
+
+<html>
+
+<title> Demo on Using the ng-options to fill the dropdown list from the list of values</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+">
+</script>
+
+          <script>
+                    var app = angular.module("myApp", []);
+
+                    app.controller("myCntrl", function ($scope) {
+                              $scope.myList = ['Apple', 'Mango', 'Banana', 'Orange']
+                    });
+          </script>
+</head>
+
+<body ng-app="myApp">
+
+          <div ng-controller="myCntrl">
+                    List of Fruits: <select ng-model="selectFruit" ng-options="fruit for fruit in myList"></select>
+
+          </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+# Addition program.
+
+<!DOCTYPE html>
+
+<html>
+<title>
+          Addition Program
+</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+">
+
+</script>
+
+          <script>
+                    var app = angular.module("myApp", []); app.controller("myCntrl", function ($scope) {
+                              $scope.num1 = 0
+                              $scope.num2 = 0
+                              $scope.result = 0
+
+                              $scope.add = function () {
+                                        $scope.result = $scope.num1 + $scope.num2
+                              }
+
+                    });
+
+          </script>
+
+</head>
+
+<body ng-app="myApp">
+
+          <h1>Addition Program</h1>
+
+          <div ng-controller="myCntrl">
+
+                    Enter First Number: <input type="number" ng-model="num1"><br /> Enter Second Number: <input
+                              type="number" ng-model="num2"><br />
+                    <button ng-click="add()">ADD</button><br /> Sum of {{num1}} and {{num2}} = {{result}}
+
+          </div>
+
+</body>
+
+</html>

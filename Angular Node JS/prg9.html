@@ -1,0 +1,39 @@
+# 9. Example on random number generation
+<!DOCTYPE html>
+<html>
+<title>Random Number Generation Demo</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+          </script>
+
+          <script>
+
+                    var app = angular.module("myApp", []); app.controller("myCntrl", function ($scope) {
+                              $scope.randomList = []
+
+                              $scope.generateRandomNumbers = function () {
+                                        $scope.randomList = []
+                                        for (var i = 1; i <= $scope.num; i++) {
+
+                                                  $scope.randomList.push((Math.random() * $scope.num + 1).toFixed(2))
+                                        }
+                              }
+                    });
+
+
+
+
+
+          </script>
+</head>
+
+<body ng-app="myApp">
+          <div ng-controller="myCntrl">
+                    Enter the Number of random numbers to be generated: <input type="numbers" ng-model="num">
+                    <button ng- click="generateRandomNumbers()">Generate</button><br />
+                    <li ng-repeat="x in randomList">{{x}}</li>
+          </div>
+</body>
+
+</html>

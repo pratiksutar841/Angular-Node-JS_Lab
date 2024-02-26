@@ -1,0 +1,36 @@
+# Example on ng-click.
+
+<!DOCTYPE html>
+<html>
+<title>
+          Demo on ng-click directive
+</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+">
+</script>
+
+          <script>
+                    var app = angular.module("myApp", []); app.controller("myCntrl", function ($scope) {
+                              $scope.num1 = 20
+                              $scope.num2 = 30
+                              $scope.result
+
+                              $scope.add = function () {
+                                        console.log("Function Called")
+                                        $scope.result = $scope.num1 + $scope.num2
+                                        // return $scope.result
+                              }
+
+                    });
+          </script>
+</head>
+
+<body>
+          <div ng-app="myApp" ng-controller="myCntrl"> Click the button to get the result
+                    <button ng-click="add()">Click Here</button><br /> Result: {{result}}
+          </div>
+</body>
+
+</html>

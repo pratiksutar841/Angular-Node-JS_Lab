@@ -1,0 +1,42 @@
+# Example on rootScope and Controller scope variables
+<!DOCTYPE html>
+
+<html>
+<title>Demo on root scope variable</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+          </script>
+
+          <script>
+                    var app = angular.module("myApp", []); app.run(function ($rootScope) {
+                              $rootScope.dept1 = "CSE"
+                              $rootScope.dept2 = "ECE"
+                    });
+
+                    app.controller("myCntrl", function ($scope) {
+                              $scope.name1 = "Harish Kumar B T"
+                    });
+
+                    app.controller("myAnotherCntrl", function ($scope) {
+                              $scope.name2 = "Chetan Kumar B T"
+                    });
+
+          </script>
+
+</head>
+
+<body ng-app="myApp">
+          <div ng-controller="myCntrl"> Dept. of {{dept1}} Faculties<br /> 1. {{name1}}
+                    2. {{name2}}
+
+          </div>
+
+          <div ng-controller="myAnotherCntrl"> Dept. of {{dept2}} Faculties<br />
+                    1. {{name1}}
+                    2. {{name2}}
+          </div>
+
+</body>
+
+</html>

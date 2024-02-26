@@ -1,0 +1,36 @@
+# Example on ng-repeat
+
+<!DOCTYPE html>
+
+<html>
+
+<title>
+          Demo on using ng-repeat
+</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+">
+</script>
+
+          <script>
+                    var app = angular.module("myApp", []);
+
+                    app.controller("myCntrl", function ($scope) {
+                              $scope.myList = ['Cow', 'Lion', 'Tiger', 'Deer', 'Sheep']
+
+                    });
+          </script>
+</head>
+
+<body ng-app="myApp">
+
+          <div ng-controller="myCntrl">
+
+                    <ul>
+                              <li ng-repeat="animal in myList">{{animal}}</li>
+                    </ul>
+          </div>
+</body>
+
+</html>

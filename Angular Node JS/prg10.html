@@ -1,0 +1,51 @@
+# Example on student List Object.
+
+<!DOCTYPE html>
+
+<html>
+<title> Demo on List of Student Objects</title>
+
+<head>
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+          </script>
+
+          <script>
+                    var app = angular.module("studListApp", []); app.controller("studListAppCntrl", function ($scope) {
+                              $scope.studList = [
+                                        { 'USN': '1BI20CS001', 'NAME': 'ABC', 'DEPT': 'CSE', 'SEM': 7, 'MARKS': 78 },
+                                        { 'USN': '1BI20EC002', 'NAME': 'XYZ', 'DEPT': 'ECE', 'SEM': 6, 'MARKS': 89 },
+                                        { 'USN': '1BI20EE003', 'NAME': 'PQR', 'DEPT': 'EEE', 'SEM': 7, 'MARKS': 56 },
+                                        { 'USN': '1BI20CS002', 'NAME': 'LMN', 'DEPT': 'CSE', 'SEM': 7, 'MARKS': 90 },
+                              ]
+                    });
+
+          </script>
+</head>
+
+<body ng-app="studListApp">
+
+          <h1>Student List</h1>
+
+          <div ng-controller="studListAppCntrl">
+
+                    <table border="1">
+                              <tr>
+                                        <th>USN</th>
+                                        <th>NAME</th>
+                                        <th>DEPT</th>
+                                        <th>SEM</th>
+                                        <th>MARKS</th>
+                              </tr>
+                              <tr ng-repeat="student in studList">
+                                        <td>{{student.USN}}</td>
+                                        <td>{{student.NAME}}</td>
+                                        <td>{{student.DEPT}}</td>
+                                        <td>{{student.SEM}}</td>
+                                        <td>{{student.MARKS}}</td>
+                              </tr>
+                    </table>
+
+          </div>
+</body>
+
+</html>
